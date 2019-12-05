@@ -1,21 +1,22 @@
 <?php
-echo "Let's play a game!";
-echo "High number wins!";
-echo "Pick a number between 0 and 9";
+$gamerunning = true;
+while ($gamerunning) {
 
+echo "Let's play a game!\n";
+echo "High number wins!\n";
+echo "Pick a number between 0 and 9\n";
 
 $input = rtrim(fgets(STDIN));
-$mynumber = rand ($min, $max);
+$mynumber = mt_rand(1,9);
 $yournumber = (int)$input;
-$min = 1;
-$max = 9;
 
 if ($mynumber == $yournumber) {
-echo "Play again\n";
+echo "It's a tie, play again\n";
 } elseif ($mynumber < $yournumber) {
     echo "You cheated pick again!\n";
 } else { 
     echo "I won!\n";
+    $gamerunning = false;
 }
-
-
+}
+?>
