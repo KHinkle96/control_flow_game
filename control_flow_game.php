@@ -10,3 +10,12 @@ $yournumber = (int)$input;
 $min = 1;
 $max = 9;
 
+if ($mynumber == $yournumber) {
+echo "Play again\n";
+} elseif ($mynumber < $yournumber) {
+    echo "You cheated pick again!\n";
+} else { 
+    echo "I won!\n";
+}
+
+
